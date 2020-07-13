@@ -1,0 +1,61 @@
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+.footer {
+  grid-column: center-start / center-end;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 3rem 0;
+
+  &__info {
+    flex: 1;
+    display: grid;
+    margin: 3rem 15rem 3rem 0;
+  }
+
+  &__menus {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    margin: 3rem 0;
+  }
+
+  &__navigation {
+    display: grid;
+    gap: 3rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+  }
+
+  &__links {
+
+  }
+
+  &__link {
+    @include links;
+    color: $grey-dark-2;
+    font-weight: 500;
+    
+    &:link,
+    &:visited {
+ 
+    }
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
+  }
+    
+  &__item {
+    margin: 1rem 0;
+  }
+
+  &__copyright {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}

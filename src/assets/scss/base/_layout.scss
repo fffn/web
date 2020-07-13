@@ -1,0 +1,101 @@
+/*------------------------------------*\
+  #GRID
+\*------------------------------------*/
+.container {
+  display: grid;
+  grid-template-rows: minmax(min-content, 20vh)
+                      minmax(min-content, 55vh)
+                      minmax(min-content, 40vh)
+                      minmax(min-content, 65vh)
+                      minmax(min-content, 70vh)
+                      minmax(min-content, 70vh)
+                      minmax(min-content, 60vh)
+                      minmax(min-content, 35vh);
+
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-rows: minmax(min-content, 20rem)
+                        minmax(min-content, 70rem)
+                        minmax(min-content, 65rem)
+                        minmax(min-content, 60rem)
+                        minmax(min-content, 65rem)
+                        minmax(min-content, 70rem)
+                        minmax(min-content, 90rem)
+                        minmax(min-content, 35rem);
+    @include respcolumns;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: minmax(min-content, 20rem)
+                        minmax(min-content, 75rem)
+                        minmax(min-content, 60rem)
+                        minmax(min-content, 65rem)
+                        minmax(min-content, 65rem)
+                        minmax(min-content, 75rem)
+                        minmax(min-content, 90rem)
+                        minmax(min-content, 35rem);
+    @include respcolumns;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: minmax(min-content, 15rem)
+                        minmax(min-content, 85rem)
+                        minmax(min-content, 35rem)
+                        minmax(min-content, 55rem)
+                        minmax(min-content, 65rem)
+                        minmax(min-content, 75rem)
+                        minmax(min-content, 55rem)
+                        minmax(min-content, 35rem);
+    @include respcolumns;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: minmax(min-content, 15rem)
+                        minmax(min-content, 80rem)
+                        minmax(min-content, 65rem)
+                        minmax(min-content, 60rem)
+                        minmax(min-content, 70rem)
+                        minmax(min-content, 85rem)
+                        minmax(min-content, 100rem)
+                        minmax(min-content, 35rem);
+    @include respcolumns;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    grid-template-rows: minmax(min-content, 15rem)
+                        minmax(min-content, 80rem)
+                        minmax(min-content, 120rem)
+                        minmax(min-content, 155rem)
+                        minmax(min-content, 80rem)
+                        minmax(min-content, 100rem)
+                        minmax(min-content, 150rem)
+                        minmax(min-content, 35rem);
+    @include respcolumns;
+  }
+}
+
+.container-reference {
+  display: grid;
+  background-color: $primary;
+
+  grid-template-rows: 20vh repeat(7, minmax(min-content, 45vh)) 20vh repeat(2, minmax(min-content, 45vh));
+  @include showcasecolumns;
+}
+
+.container-sablony {
+  display: grid;
+  background-color: $primary;
+
+  grid-template-rows: 20vh repeat(8, minmax(min-content, 45vh)) 20vh repeat(2, minmax(min-content, 45vh));
+  @include showcasecolumns;
+}
+
+.container-odkaz {
+  display: grid;
+  height: 100vh;
+  background-color: $primary;
+
+  grid-template-rows: minmax(min-content, 20rem) minmax(min-content, 50rem) min-content;
+  @include showcasecolumns;
+}

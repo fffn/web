@@ -1,0 +1,53 @@
+/*------------------------------------*\
+  #BLOG
+\*------------------------------------*/
+.blog {
+  grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-top: 8rem;
+    }
+  }
+  
+  &__post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  &__post {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  &__img {
+    transition: all .3s;
+
+    &:hover {
+      transform: scale(1.05) translateY(-1rem);
+      box-shadow: 0 .5rem 2rem rgba($color-black, .3);
+      z-index: 20;
+    }
+  }
+  
+  &__text {
+    max-width: 29rem;
+    text-decoration: none;
+    
+    &:hover {
+      color: $pinkish;
+    }
+  }
+}

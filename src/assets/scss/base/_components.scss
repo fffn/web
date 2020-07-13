@@ -1,0 +1,194 @@
+/*------------------------------------*\
+  #BUTTONS
+\*------------------------------------*/
+.button {
+  border-radius: 5px;
+
+  &,
+  &:link,
+  &:visited {
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    position: relative;
+    transition: all .2s;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: .8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s;
+  }
+
+  &:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 .8rem 2rem rgba($color-black, .2);
+
+    &::after {
+      transform: scaleX(1.11);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem .5rem rgba($color-black, .3);
+  }
+
+  /*------------------------------------*\
+    --button variants
+  \*------------------------------------*/
+  &--signin {
+    border: 1px solid $grey-light-3;
+    border-radius: 10px;
+    padding: 1.1rem 3rem !important;
+    background-color: transparent;
+    box-shadow: 0 1rem 3rem rgba($grey-dark-1, .5);
+    @include button;
+  }
+
+  &--signup {
+    padding: 1.15rem 3rem !important;
+    background-color: #000;
+    box-shadow: 0 1rem 3rem rgba($grey-dark-1, .5);
+    @include button;
+  }
+
+  &--cta {
+    background-color: $pinkish;
+    padding: 1.5rem 4rem;
+    @include button;
+
+    &::after {
+      background-color: $pinkish;
+   }
+  }
+
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+
+/*------------------------------------*\
+  #DOT INDICATORS
+\*------------------------------------*/
+.indicators{
+  margin-top: 6rem;
+  
+  & ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    cursor: default;
+  }
+
+  & li {
+    position: relative;
+    margin: 0 .6rem;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    
+    & a {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $grey-light-3;
+      text-indent: -999em;
+      cursor: pointer; /* make the text accessible to screen readers */
+      position: absolute;
+
+      &.current {
+        background-color: $pinkish;
+      }
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  #LOGO
+\*------------------------------------*/
+.logo {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: min-content;
+  align-items: flex-end;
+
+  &::after {
+    content: "";
+    background-color: $pinkish;
+    margin: .7rem .5rem;
+    height: 1rem;
+    width: 1rem;
+    transition: all .5s;
+  }
+} 
+
+
+/*------------------------------------*\
+  #BACKTOTOP 
+\*------------------------------------*/
+#backtotop {
+  position: fixed;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  bottom: 2.5rem;
+  margin: 0 2.5rem 0 0;
+  z-index: 9999;
+  transition: 0.35s;
+  transform: scale(0.7);
+  transition: all 0.5s;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  a {
+    outline: none;
+    text-decoration: none;
+    border: 0 none;
+    display: block;
+    width: 4.6rem;
+    height: 4.6rem;
+    background-color: $color-primary-light;
+    color: white;
+    opacity: 1;
+    transition: all 0.3s;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 4.8rem;
+
+    &:after {
+      outline: none;
+      content: "\e010";
+      font-family: "linea-arrows-10";
+      position: relative;
+      display: block;
+      top: 59%;
+      -webkit-transform: translateY(-55%);
+      transform: translateY(-55%);
+    }
+
+    &:hover {
+      outline: none;
+      opacity: 0.9;
+      background: $secondary;
+    }
+  }
+}

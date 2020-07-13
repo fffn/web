@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+@mixin respcolumns {
+  grid-template-columns: [full-start] 1fr [center-start] 1fr [center-end] 1fr [full-end];
+}
+
+@mixin showcasecolumns {
+  grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(5, [col-start] minmax(min-content, 27rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+}
+
+@mixin headings {
+  color: $grey-dark-1;
+}
+
+@mixin button {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: $grey-light-1;
+}
+
+@mixin links {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+@mixin line {
+  width: 20px;
+  height: 2px;
+  background: $color;
+}

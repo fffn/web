@@ -1,0 +1,10 @@
+ <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE "application/javascript" \
+                                      "image/svg+xml" \
+                                      "font/eot" \
+                                      "font/opentype" \
+                                      "font/otf" \
+                                      "font/ttf" \
+                                      "text/css" \
+                                      "text/html" \
+ </IfModule>

@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  #STORY
+\*------------------------------------*/
+.story {
+  grid-column: center-start / center-end;
+  display: grid;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  &__sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+    align-items: start;
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+    max-width: 49rem;
+  }
+
+  &__icons {
+    grid-row: 1 / span 2;
+    font-size: 4.5rem;
+    color: $pinkish;
+  }
+}

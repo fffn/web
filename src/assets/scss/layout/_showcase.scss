@@ -1,0 +1,46 @@
+/*------------------------------------*\
+  #SABLONY + REFERENCE + ODKAZ
+\*------------------------------------*/
+.showcase {
+  grid-column: center-start / center-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &-tripled {
+    @extend .showcase;
+    grid-template-columns: 1fr max-content 1fr;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    gap: 0.5rem;
+    margin-right: 3rem;
+  }
+
+  &__heading {
+    grid-column: center-start / center-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--center {
+      @extend .showcase__heading;
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    font-size: 5rem;
+
+    &--small {
+      font-size: 3rem;
+      margin-right: .4rem;
+    }
+  }
+}
+

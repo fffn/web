@@ -1,0 +1,42 @@
+/*------------------------------------*\
+  #FEATURES
+\*------------------------------------*/
+.features {
+  grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+  &__box {
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transition: transform .3s;
+
+    &:hover {
+      transform: translateY(-1.5rem) scale(1.03);
+    }
+  }
+
+  &__icon {
+    font-size: 6rem;
+    color: $blue-light;
+    padding: 1.85rem;
+    border: 3px solid $color-primary-light;
+    border-radius: 1.5rem;
+
+    &:hover {
+      background-color: $blue-light;
+      color: rgba($grey-light-1, .95);
+    }
+  }
+
+  &__desc {
+  
+    @media screen and (max-width: $bp-small){
+      max-width: 15rem;
+    }
+  }
+}

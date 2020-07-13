@@ -1,0 +1,26 @@
+/*------------------------------------*\
+  #TESTIMONIALS
+\*------------------------------------*/
+.testimonials {
+  grid-column: center-start / center-end;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__client {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
